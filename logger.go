@@ -2,7 +2,7 @@ package gologger
 
 import (
 	"encoding/json"
-	"log"
+	"fmt"
 	"os"
 )
 
@@ -46,7 +46,7 @@ func print(level string, msg string) {
 	if err != nil {
 		return
 	}
-	log.Println(string(buf))
+	fmt.Fprintln(os.Stdout, string(buf))
 }
 
 func Debug(msg string) {
